@@ -95,7 +95,7 @@ public class Main extends javax.swing.JFrame {
 
     private void wc_minusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wc_minusBtnActionPerformed
         wc_energyProgress.setValue(wc_energyProgress.getValue() - 10);
-        wc_energyText.setText(wc_energyProgress.getValue() + " %");
+        wc_energyText.setText(wc_energyProgress.getValue() + " %");//commit
     }//GEN-LAST:event_wc_minusBtnActionPerformed
 
     /**
