@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package mp5package;
-// fegrhguherige
 /**
  *
  * @author Wayne
