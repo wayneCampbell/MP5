@@ -35,6 +35,7 @@ public class Main extends javax.swing.JFrame {
         wc_plusBtn = new javax.swing.JButton();
         wc_minusBtn = new javax.swing.JButton();
         wc_energyText = new javax.swing.JLabel();
+        wc_movingLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,28 +55,37 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        wc_movingLabel.setText("Moving Label thing");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(wc_minusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(wc_plusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(wc_energyProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(wc_energyText, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(309, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(wc_minusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(wc_plusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(wc_energyProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(wc_energyText, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(wc_movingLabel)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(194, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
+                .addComponent(wc_movingLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(wc_energyText, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
@@ -93,13 +103,18 @@ public class Main extends javax.swing.JFrame {
     private void wc_plusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wc_plusBtnActionPerformed
         wc_energyProgress.setValue(wc_energyProgress.getValue() + 10);
         wc_energyText.setText("" + wc_energyProgress.getValue() + " %");
+        movingLabel();
     }//GEN-LAST:event_wc_plusBtnActionPerformed
 
     private void wc_minusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wc_minusBtnActionPerformed
         wc_energyProgress.setValue(wc_energyProgress.getValue() - 10);
         wc_energyText.setText("" + wc_energyProgress.getValue() + " %");//commit
+        movingLabel();
     }//GEN-LAST:event_wc_minusBtnActionPerformed
 
+    public void movingLabel(){
+        wc_movingLabel.setAlignmentX(wc_energyProgress.getValue());
+    }
     /**
      * @param args the command line arguments
      */
@@ -140,6 +155,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JProgressBar wc_energyProgress;
     private javax.swing.JLabel wc_energyText;
     private javax.swing.JButton wc_minusBtn;
+    private javax.swing.JLabel wc_movingLabel;
     private javax.swing.JButton wc_plusBtn;
     // End of variables declaration//GEN-END:variables
 }
