@@ -13,6 +13,7 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
+    private Cannon Cannon = new Cannon();
     
     public Main() {
         initComponents();
@@ -103,17 +104,19 @@ public class Main extends javax.swing.JFrame {
     private void wc_plusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wc_plusBtnActionPerformed
         wc_energyProgress.setValue(wc_energyProgress.getValue() + 10);
         wc_energyText.setText("" + wc_energyProgress.getValue() + " %");
+        Cannon.setX(Cannon.getX() + 10);
         movingLabel();
     }//GEN-LAST:event_wc_plusBtnActionPerformed
 
     private void wc_minusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wc_minusBtnActionPerformed
         wc_energyProgress.setValue(wc_energyProgress.getValue() - 10);
         wc_energyText.setText("" + wc_energyProgress.getValue() + " %");//commit
+        Cannon.setX(Cannon.getX() + 10);
         movingLabel();
     }//GEN-LAST:event_wc_minusBtnActionPerformed
 
     public void movingLabel(){
-        wc_movingLabel.setLocation(5,wc_energyProgress.getValue());
+        wc_movingLabel.setLocation(5,Cannon.getX());
     }
     /**
      * @param args the command line arguments
