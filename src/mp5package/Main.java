@@ -13,8 +13,10 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
+    
     public Main() {
         initComponents();
+        wc_energyText.setText("" + wc_energyProgress.getValue() + " %");
     }
 
                             
