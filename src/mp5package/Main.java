@@ -85,7 +85,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void wc_plusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wc_plusBtnActionPerformed
-        wc_energyProgress.setValue(wc_energyProgress.getValue() + 20);
+        wc_energyProgress.setValue(wc_energyProgress.getValue() + 10);
     }//GEN-LAST:event_wc_plusBtnActionPerformed
 
     private void wc_minusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wc_minusBtnActionPerformed
