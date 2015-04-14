@@ -113,7 +113,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_wc_minusBtnActionPerformed
 
     public void movingLabel(){
-        wc_movingLabel.setAlignmentX(wc_energyProgress.getValue());
+        wc_movingLabel.setLocation(5,wc_energyProgress.getValue());
     }
     /**
      * @param args the command line arguments
