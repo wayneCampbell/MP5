@@ -113,8 +113,8 @@ public class Main extends javax.swing.JFrame {
         
         moveLabel(progressBarValue);
         
-        RectangleComponent component = new RectangleComponent();
-        component.setBox(progressBarValue);
+        //Stupiod Wayne stuffs
+        //RectangleComponent component = new RectangleComponent();
         
         
         
